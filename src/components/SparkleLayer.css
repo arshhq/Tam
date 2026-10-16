@@ -1,0 +1,35 @@
+.sparkles {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkles__dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: var(--warm-white);
+  box-shadow:
+    0 0 6px var(--glow-pink),
+    0 0 12px var(--glow-lavender);
+  animation: sparkle-pop 0.65s var(--ease-out) forwards;
+}
+
+@keyframes sparkle-pop {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.4);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) translateY(-12px);
+  }
+}

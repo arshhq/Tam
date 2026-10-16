@@ -1,0 +1,54 @@
+.chaos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  max-width: 16rem;
+}
+
+.chaos__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--blush);
+  background: rgba(48, 32, 77, 0.55);
+  border: 1px solid rgba(255, 185, 213, 0.28);
+  backdrop-filter: blur(8px);
+  transition: transform 0.15s var(--ease-out), background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chaos__btn:hover {
+  background: rgba(48, 32, 77, 0.75);
+  border-color: rgba(255, 185, 213, 0.5);
+}
+
+.chaos__btn:active {
+  transform: scale(0.96);
+}
+
+.chaos__msg {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  padding: 0.55rem 0.7rem;
+  border-radius: 12px;
+  background: rgba(23, 18, 45, 0.55);
+  border: 1px solid rgba(189, 169, 255, 0.18);
+  animation: chaos-in 0.35s var(--ease-out) both;
+}
+
+@keyframes chaos-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,28 @@
+.app {
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  color: var(--warm-white);
+}
+
+.app__main {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  background: var(--plum);
+  color: var(--warm-white);
+  border-radius: 0 0 8px 0;
+  font-size: 0.85rem;
+}
+
+.skip-link:focus {
+  left: 0;
+}

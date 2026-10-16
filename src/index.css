@@ -1,0 +1,90 @@
+:root {
+  --midnight: #17122d;
+  --plum: #30204d;
+  --lavender: #bda9ff;
+  --pink: #ffb9d5;
+  --blush: #ffe1ed;
+  --warm-white: #fff8fc;
+  --glow-pink: rgba(255, 185, 213, 0.55);
+  --glow-lavender: rgba(189, 169, 255, 0.45);
+  --glass: rgba(48, 32, 77, 0.55);
+  --glass-border: rgba(255, 248, 252, 0.14);
+  --text: var(--warm-white);
+  --text-muted: rgba(255, 248, 252, 0.72);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Sora', system-ui, sans-serif;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --radius: 18px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  color: var(--text);
+  background: var(--midnight);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--lavender);
+  outline-offset: 3px;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: rgba(189, 169, 255, 0.35);
+  color: var(--warm-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,126 @@
+.istar {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.istar--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.istar--sm .istar__core {
+  width: 8px;
+  height: 8px;
+}
+
+.istar--md .istar__core {
+  width: 11px;
+  height: 11px;
+}
+
+.istar--lg {
+  width: 52px;
+  height: 52px;
+}
+
+.istar--lg .istar__core {
+  width: 14px;
+  height: 14px;
+}
+
+.istar__core {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff8fc, #ffb9d5 55%, #bda9ff);
+  box-shadow:
+    0 0 10px rgba(255, 185, 213, 0.75),
+    0 0 22px rgba(189, 169, 255, 0.45);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s ease;
+}
+
+.istar__ring {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 248, 252, 0.28);
+  opacity: 0.55;
+  transition: transform 0.3s var(--ease-out), opacity 0.3s ease;
+}
+
+.istar--lg .istar__ring {
+  width: 28px;
+  height: 28px;
+}
+
+.istar--final .istar__core {
+  background: radial-gradient(circle at 35% 30%, #fff8fc, #ffe1ed 40%, #bda9ff 85%);
+  box-shadow:
+    0 0 14px rgba(189, 169, 255, 0.85),
+    0 0 32px rgba(255, 185, 213, 0.4);
+}
+
+.istar__pulse {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(189, 169, 255, 0.45);
+  animation: star-pulse 3.2s ease-out infinite;
+}
+
+.istar--discovered .istar__core {
+  box-shadow:
+    0 0 8px rgba(255, 225, 237, 0.9),
+    0 0 18px rgba(189, 169, 255, 0.55);
+}
+
+.istar:hover,
+.istar:focus-visible {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.istar:hover .istar__core,
+.istar:focus-visible .istar__core {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 16px rgba(255, 185, 213, 0.95),
+    0 0 36px rgba(189, 169, 255, 0.65);
+}
+
+.istar:hover .istar__ring,
+.istar:focus-visible .istar__ring {
+  transform: scale(1.35);
+  opacity: 0.9;
+}
+
+.istar:active {
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+@keyframes star-pulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .istar {
+    width: 48px;
+    height: 48px;
+  }
+}
